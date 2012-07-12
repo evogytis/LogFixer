@@ -5,7 +5,7 @@ LogFixer is a simple Python script that corrects up to 4 BEAST output files with
 
 Configuring LogFixer
 To use LogFixer simply open Log_Fixer.py with a text editor and paste in the paths to BEAST output files.
-If you don't have gmrf or rates files don't worry - just leave '' where it says gmrffile and ratesfile.
+If you don't have gmrf or rates files don't worry - just leave '' (that's two ' symbols) where it says gmrffile and ratesfile.
 There's nothing special about which files go where (except for log and trees files), because 
 all non-trees files are parsed the same way.
 
