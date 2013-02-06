@@ -88,7 +88,7 @@ for i in range(len(logfileList)):
 ## finds the states shared by all files
 common = set(logfileStates[0])
 for i in range(len(logfileStates[1:])):
-    common.intersection(logfileStates[i])
+    common.intersection(logfileStates[i+1])
 
 print '\nNumber of states shared by all files: %s'%(len(common))
 
