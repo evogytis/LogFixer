@@ -44,9 +44,10 @@ if usingTrees==True:
     logfileStates.append([])
     treefile=open(trees.name,'r')
     for i in treefile:
-        cerberus=re.search("tree STATE_([0-9]+)",i)
-        if cerberus is not None:
-            logfileStates[0].insert(0,cerberus.group(1))
+        if i.count('\x00') == 0:
+            cerberus=re.search("tree STATE_([0-9]+)",i)
+            if cerberus is not None:
+                logfileStates[0].insert(0,cerberus.group(1))
     treefile.close()
 
 ## rewrite every file in case of null bytes
