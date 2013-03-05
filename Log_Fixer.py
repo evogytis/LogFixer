@@ -99,7 +99,10 @@ for i in range(len(logfileList)):
     #print '\nWriting shared states from file %s'%(logfileList[i].name)
     with open(logfileList[i].name+'2.txt') as f:
         j=csv.reader(f,delimiter='\t')
-        out=open(logfileList[i].name.replace('.txt','.fixed.txt'),'w+')
+        if '.txt' in logfileList[i].name:
+            out=open(logfileList[i].name.replace('.txt','.fixed.txt'),'w+')
+        else:
+            out=open(logfileList[i].name+'.fixed.txt','w+')
         linecounter=-1
         for k in j:
             if len(k)==1:
@@ -125,7 +128,10 @@ for i in range(len(logfileList)):
 if usingTrees==True:
     treescounter=-1
     trees=open(trees.name,'r')
-    out=open(trees.name.replace('.txt','.fixed.txt'),'w+')
+    if '.txt' in trees.name:
+        out=open(trees.name.replace('.txt','.fixed.txt'),'w+')
+    else:
+        out=open(trees.name+'.fixed.txt','w+')
     for i in trees:
         cerberus=re.search("tree STATE_([0-9]+)",i)
         if "tree STATE_" not in i:
